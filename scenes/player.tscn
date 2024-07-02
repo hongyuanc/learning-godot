@@ -43,6 +43,8 @@ animations = [{
 size = Vector2(10, 15)
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 5
+collision_layer = 2
 script = ExtResource("1_hkitp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -50,6 +52,7 @@ position = Vector2(1, -12)
 sprite_frames = SubResource("SpriteFrames_22cav")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.154488
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -7.5)
