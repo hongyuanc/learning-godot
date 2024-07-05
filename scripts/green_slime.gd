@@ -1,6 +1,8 @@
 extends Node2D
 
 const SPEED = 60
+@onready var timer = $detection/Timer
+@onready var player = $"../Player/"
 
 var direction = 1
 
@@ -18,3 +20,10 @@ func _process(delta):
 		direction = 1
 		animated_sprite_2d.flip_h = false
 	position.x += direction * SPEED * delta
+	
+func _on_detection_body_entered(body):
+	timer.start()
+
+func _on_timer_timeout():
+	Engine.time_scale = 1
+	get_tree().reload_current_scene()

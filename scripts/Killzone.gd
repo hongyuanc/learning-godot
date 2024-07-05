@@ -1,15 +1,12 @@
 extends Area2D
 
 @onready var timer = $Timer
-@onready var player = $"../Player"
+@onready var player = $"../Player/AnimatedSprite2D"
 
-func _ready():
-	print("Player node: ", player)
 
 func _on_body_entered(body):
-	print("You died")
+	print("You fell")
 	Engine.time_scale = 0.9
-	body.get_node("CollisionShape2D").queue_free()
 	
 	timer.start()
 	
